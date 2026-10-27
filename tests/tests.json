@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Preview a jersey then continue to the Google Form",
+    "sanity": true,
+    "viewport": "desktop",
+    "covers": [
+      "landing page loads",
+      "V1-V4 names",
+      "enlarged jersey preview modal",
+      "close modal",
+      "Google Form navigation from preview"
+    ],
+    "description": "Verifies a jersey card opens a larger preview first and the order button opens the official Google Form.",
+    "steps": [
+      "Open the landing page",
+      "Select the V1 Infernal jersey image",
+      "Verify the enlarged image and V1 name appear",
+      "Activate Order This Jersey"
+    ],
+    "expected": "The V1 preview opens with its large image and title. The order CTA opens the supplied Google Form in a new tab."
+  },
+  {
+    "name": "Open and close a jersey preview on mobile",
+    "viewport": "mobile",
+    "covers": [
+      "responsive layout",
+      "mobile enlarged preview",
+      "close control",
+      "escape/backdrop dismissal",
+      "mobile CTA usability"
+    ],
+    "description": "Verifies the preview is usable on mobile and can be dismissed without leaving the page.",
+    "steps": [
+      "Open the landing page at a mobile viewport",
+      "Tap a V3 jersey image",
+      "Close the preview with the close button",
+      "Open it again and tap Order This Jersey"
+    ],
+    "expected": "The image fits the mobile screen, close dismisses the preview, and order opens the Google Form."
+  },
+  {
+    "name": "Share the landing page link",
+    "viewport": "desktop",
+    "covers": [
+      "share action",
+      "copy-link fallback",
+      "social preview metadata",
+      "jersey image Open Graph preview"
+    ],
+    "description": "Verifies the share action works and metadata points to the public Asylum share preview.",
+    "steps": [
+      "Open the landing page",
+      "Activate the Share button",
+      "Use the native share sheet when available or the copy-link fallback"
+    ],
+    "expected": "The share UI or copy fallback works and Open Graph/Twitter metadata reference the share image hosted in the GitHub branch."
+  }
+]
