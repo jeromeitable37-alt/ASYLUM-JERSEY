@@ -109,6 +109,18 @@ function openJerseyPreview(trigger: HTMLElement): void {
 document.querySelectorAll<HTMLElement>('.jersey-card [data-jersey-open]').forEach((trigger) => {
   trigger.addEventListener('click', () => openJerseyPreview(trigger));
 });
+ 
+// The four featured tiles and collection cards share the same preview source,
+// so updated jersey names cannot get out of sync between the two sections.
+const collectionCards = Array.from(document.querySelectorAll<HTMLElement>('.jersey-card'));
+document.querySelectorAll<HTMLButtonElement>('[data-hero-jersey]').forEach((tile) => {
+  tile.addEventListener('click', () => {
+    const index = Number(tile.dataset.heroJersey);
+    const card = collectionCards[index];
+    const previewTrigger = card?.querySelector<HTMLElement>('[data-jersey-open]');
+    if (previewTrigger) openJerseyPreview(previewTrigger);
+  });
+});
 
 previewClose?.addEventListener('click', closeJerseyPreview);
 previewModal?.addEventListener('click', (event) => {
