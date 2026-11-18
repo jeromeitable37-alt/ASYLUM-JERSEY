@@ -1238,6 +1238,29 @@ p {
   gap: 6px;
   background: #150303;
 }
+.hero-jersey-tile {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 0;
+  border: 1px solid rgba(255,255,255,.12);
+  background: #150303;
+  color: #fff;
+  cursor: zoom-in;
+  text-align: center;
+  transition: border-color .18s ease, transform .18s ease;
+}
+.hero-jersey-tile:hover { border-color: rgba(255,73,73,.65); transform: translateY(-2px); }
+.hero-jersey-tile:focus-visible { outline: 2px solid var(--red-bright); outline-offset: 2px; }
+.hero-jersey-name {
+  display: block;
+  width: 100%;
+  padding: 7px 3px 8px;
+  color: #fff;
+  font: 800 clamp(9px, 1.1vw, 12px)/1.2 'Barlow Condensed', sans-serif;
+  letter-spacing: .045em;
+  background: #290606;
+}
 .hero-jersey-grid img {
   display: block;
   width: 100%;
